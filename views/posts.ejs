@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") -%>
+    <br>
+    <center>
+        <br>
+        <a href="posts/create/" class="btn btn-light">+ Add Post</a>
+        <br>
+        <br>
+        <h1 class="display-3" style="color: #DA1C5C;">Posts</h1>
+        <hr style="width: 65%;">
+        <br>
+        <br> 
+        <% if(posts.length>= 1){ %>
+            <div style="width: 75%;" class="container">
+                <% for(var i=posts.length-1; i>=0; i--){ %>
+                    <div class="card bg-<%= posts[i].postcolor %>">
+                        <div class="card-header">
+                            <a style="   
+                            text-decoration: none; 
+                            background-color: none;
+                            color: white;" href="/<%=posts[i].postusername%>">
+                            <img style="width: 30px; height: 30px; border-radius: 50%;"
+                                src="/uploads/<%= posts[i].postimgname %>">&nbsp;
+                            <span class="text">
+                                <%= posts[i].postusername %>
+                            </span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= posts[i].title %>
+                            </h5>
+                            <p class="caard-text">
+                                <%= posts[i].content %>
+                            </p>
+                        </div>
+                    </div><br>
+                <% } %>
+            </div>
+            <% } else { %>
+                <h1 class="display-2">No post yet. You can be first )).</h1>
+                <% } %>
+    </center>
+    <%- include("partials/footer.ejs") -%>

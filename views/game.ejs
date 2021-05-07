@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") -%>
+
+<center><br>
+<div style="width:90%" class="constainer">
+    <div class="container">
+        <img style="width: 25%;" src="/gameimages/<%=game.gameimgname%>">
+    </div><br>
+    <div class="container">
+        <h2 class="display-4"><%=game.gametitle%></h2><br>
+        <p class="fs-5"><%=game.gamedescription%></p><br><br>
+        <a id="mac" href="/games/MacOS/<%=game.gamename%>" download class="btn">Download for macOS</a>&nbsp;
+        <a id="windows" href="/games/WindowsOS/<%=game.gamename%>" download class="btn">Download for windowsOS</a>
+    </div><br>
+</div><br>
+</center>
+
+<script src="/js/script.js"></script>
+
+<%- include("partials/footer.ejs") -%>

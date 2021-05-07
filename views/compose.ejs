@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") -%>
+<br>
+
+<div class="container">
+    <form action="/posts/create" method="POST">
+        <h3>Make your post</h3>
+        <label>Title</label><br>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Post Tilte" name="posttitle" required>
+        <br>
+        <label>Content</label><br>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Post Content" name="postcontent" minlength="10" maxlength="100" required>
+        <br>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Color</label>
+            <select name="postcolor" class="form-control" id="inputGroupSelect01" required>
+                <option class="bg-primary" value="primary" selected>Primary</option>
+                <option class="bg-secondary" value="secondary">Secondary</option>
+                <option class="bg-success" value="success">Success</option>
+                <option class="bg-danger" value="danger">Danger</option>
+                <option class="bg-warning" value="warning">Warning</option>
+                <option class="bg-info" value="info">Info</option>
+                <!-- <option value="">Blue</option>
+                <option style="background-color: #3FB654;" value="">Green</option>
+                <option value="">Blue</option>
+                <option value="red">Red</option> -->
+            </select>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Add Post</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") -%>

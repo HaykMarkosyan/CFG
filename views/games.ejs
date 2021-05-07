@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") -%>
+
+<center><br>
+  <% if (!games) { %>
+    No Games yet...
+  <% } %>
+      <div class="container">
+        <h1 style="color: #DA1C5C;" class="display-3">Games</h1>
+        <hr style="width:65%"><br>
+
+
+        <div id="game-row" class="container">
+          <% for(var i=0; i < games.length; i++ ) { %>
+
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img style="height: 152px; width: 175px;" src="/gameimages/<%= games[i].gameimgname %>"
+                    alt="<%= games[i].gametitle %>">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= games[i].gametitle %>
+                    </h5>
+                    <p class="card-text">
+                      <%= games[i].gamedescription %> <a href="/games/<%=games[i].id%>">Read More...</a>
+                    </p>
+                    <p class="card-text"><small class="text-muted">
+                        <%= games[i].gamename %>
+                      </small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+</center>
+
+<%- include("partials/footer.ejs") -%>

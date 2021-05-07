@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") -%>
+
+    <center>
+        <img style=" width:100%;" src="/images/CFG.jpg">
+        <!--𝙲𝙵𝙶 𝐂𝐅𝐆 -->
+
+        <br><br><br>
+        <div class="container">
+            <p>
+                <p style="color:#DA1C5C;" class="fs-4">Welcome to CFG</p> CFG is a Web and Game dev. company,
+                in this website you can download your game and play.</p>
+                <hr style="width: 20%;">
+                <br><br>
+                <div id="games" class="container">
+                    <h1 style="color: #DA1C5C;" class="display-1">Games</h1>
+                    <hr style="width:65%"><br>
+            <% if(games.length >= 1) { %>
+                <% for( let j=0; j<games.length/3; j++) { %>
+                    <div id="game-row<%=j%>" class="container">
+                        <% for( let i=0; i<games.length; i++ ) { %>
+                            <div id="card<%=j%>-<%=i%>" class="card" style="display: inline-block; height: 25rem; width: 18rem;">
+                                <img src="/gameimages/<%=games[i].gameimgname%>" class="card-img-top"
+                                    alt="<%=games.gametitle%>">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%=games[i].gametitle%>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%=games[i].gamedescription%> <a href="/games/<%=games[i].id%>">Read More...</a>
+                                    </p>
+                                    <a href="/games/<%=games[i].id%>" class="btn btn-primary">Download</a>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div><br><br>
+                    <a href="/games" class="btn" style="color: #fff; background-color: #DA1C5C;">More Games</a>
+                <% } %>
+            <% } %>
+            </div><br>             
+            <hr style="width: 80%;"><br><br><br><br>
+
+            <div id="aboutus" class="container">
+                <h1 class="display-1" style="color: #DA1C5C;">About</h1>
+                <hr style="width: 65%;">
+                <p class="fs-4">This company is developing games and websites...</p>
+            </div>
+        </div>
+    </center>
+    <br><br><br><br>
+
+    <%- include("partials/footer.ejs") -%>

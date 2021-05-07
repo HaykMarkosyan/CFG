@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") -%>
+
+    <div class="container">
+        <center><br>
+            <% if(Pusername) { %>
+
+                <% if(edit){ %>
+                <center>
+                    <img style="width:150px; height:150px; border-radius:50%;" src="/uploads/<%= Pimgname %>">&nbsp;&nbsp;
+                    <a href="/edit" class="btn btn-light">edit</a>
+                    <h2>
+                        <%= Pusername %>
+                    </h2>
+                    <p style="width: 50%;">
+                        <%= bio %>
+                    </p>
+                </center>
+                    <% } else { %>
+                        <center>
+                            <img style="width:150px; height:150px; border-radius:50%;" src="/uploads/<%= Pimgname %>"><br>
+                            <h2>
+                                <%= Pusername %>
+                            </h2>
+                            <p style="width: 50%;">
+                                <%= bio %>
+                            </p>
+                        </center>
+                                    <% } %>
+
+                                        <% } else { %>
+
+                                            <h1>Something went wrong</h1>
+
+                                            <% } %>
+        </center>
+    </div>
+
+    <%- include("partials/footer.ejs") -%>
