@@ -21,6 +21,7 @@ const registerRoutes = require("./routes/registerRoutes")
 const loginRoutes = require("./routes/loginRoutes")
 const gamesRoutes = require("./routes/gamesRoutes")
 const postsRoutes = require("./routes/postsRoutes")
+const foregetRoutes = require("./routes/forgetpasswordRoutes")
 
 const app = express();
 
