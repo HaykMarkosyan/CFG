@@ -300,7 +300,7 @@ app.post("/rename", function (req, res) {
   if(req.session.loggedin){
     Users.findOne({username: req.body.username}, function(err, foundUser) {
       if(!err) {
-        if(!foundUser) {
+        if(!foundUser || foundUser != req.session.username) {
           Posts.find({postusername: req.session.username}, function(err, foundPosts) {
             if(foundPosts){
               for(var i = 0; i<foundPosts.length; i++) {
