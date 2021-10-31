@@ -300,11 +300,11 @@ app.post("/rename", function (req, res) {
   if(req.session.loggedin){
     Users.findOne({username: req.body.username}, function(err, foundUser) {
       if(!err) {
-        if(!foundUser || foundUser != req.session.username) {
+        if(!foundUser || foundUser.username != req.session.username) {
           Posts.find({postusername: req.session.username}, function(err, foundPosts) {
             if(foundPosts){
-              for(var i = 0; i<foundPosts.length; i++) {
-                Posts.findOneAndUpdate({postusername: foundPosts[i].postusername}, {postusername: req.body.username}, function() {console.log("exav")})
+              for(let i = 0; i<foundPosts.length; i++) {
+                Posts.findOneAndUpdate({postusername: foundPosts[i].postusername}, {postusername: req.body.username})
               }
               Users.findOneAndUpdate({username: req.session.username}, {username: req.body.username, bio:req.body.bio}, function() {req.session.username = req.body.username; res.redirect("/")})
             } else {
