@@ -57,7 +57,7 @@ router.post("/", function (req, res) {
               service: "gmail",
               auth: {
                 user: "cfg.codeforgame@gmail.com",
-                pass: "Code!For?Game1!",
+                pass: "password",
               },
             });
     
