@@ -43,7 +43,7 @@ const upload = multer({
 
 //-------
 
-app.use(express.static("public"));
+app.use(express.static("public"), {maxAge: 3600000});
 app.set("view engine", "ejs");
 app.use(
     bodyParser.urlencoded({
